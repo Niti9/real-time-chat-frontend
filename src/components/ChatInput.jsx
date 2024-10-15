@@ -105,9 +105,9 @@ const ChatInput = () => {
         value={input}
         onChange={handleInputChange} // Call typing handler on change
         onBlur={handleInputBlur} // Call stop typing on blur (unfocus)
-        // onKeyPress={(e) => {
-        //   if (e.key === 'Enter') handleSend(); // Send message on Enter key press
-        // }}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') handleSend(); // Send message on Enter key press
+        }}
       />
       <Button variant="contained" color="primary" onClick={handleSend}>
         Send

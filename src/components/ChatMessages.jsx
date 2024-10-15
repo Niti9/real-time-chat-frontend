@@ -266,13 +266,14 @@ const ChatMessages = () => {
               boxShadow: 1,
             }}
           >
+            <Typography variant="subtitle1" color="textSecondary">
+           {message.user}
+            </Typography>
             <Typography variant="body1">{message.text}</Typography>
-            {/* <Typography variant="subtitle2" color="textSecondary">
-              {message.user} - {message.timestamp}
-            </Typography> */}
             <Typography variant="subtitle2" color="textSecondary">
               {message.timestamp}
             </Typography>
+            
           </Box>
         </Box>
       ))}
