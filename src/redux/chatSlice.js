@@ -47,7 +47,12 @@ export const { setMessages, setUsers, setCurrentUser, resetChat,setSocketCurrent
 export const joinChat = (username) => (dispatch) => {
   if (!socket) {
     // socket = io('http://localhost:5000'); // Initialize socket connection
-    socket = io('https://real-time-chat-backend.vercel.app'); // Initialize socket connection
+    // socket = io('https://real-time-chat-backend.vercel.app'); // Initialize socket connection
+
+    socket = io('https://real-time-chat-backend.vercel.app/', {
+      transports: ['websocket', 'polling'],
+      withCredentials: true, // Allow credentials
+    });
   }
 
   socket.emit('joinChat', username); // Emit 'joinChat' event to server
